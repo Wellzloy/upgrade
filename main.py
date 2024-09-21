@@ -6,11 +6,11 @@
 
 def print_hi(name, age):
     # Use a breakpoint in the code line below to debug your script.
-    print(f'Приветствую тебя, {name} {age}')  # Press Ctrl+F8 to toggle the breakpoint.
+    print(f'Приветствую тебя, {name} тебе {age}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('Валентин')
+    print_hi('Валентин', 53)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
