@@ -9,15 +9,23 @@
 
 data_structure = [[1, 2, 3], {'a': 4, 'b': 5}, (6, {'cube': 7, 'drum': 8}),
                   "Hello", ((), [{(2, 'Urban', ('Urban2', 35))}])]
-w = (str(data_structure).replace('[', '').replace(']', '')
+list_values = (str(data_structure).replace('[', '').replace(']', '')
      .replace('{', '').replace('}', '')
-     .replace('(', '').replace(')', '')).split(', ')
+     .replace('(', '').replace(')', '')
+     .replace(':', ',').replace("'", "")).split(', ')
 print(type(data_structure))
-print(w)
-# print(w[3])
-# print(len(w[3]))
-# print(w[4])
-# print(len(w[4]))
-for i in w:
-    print(i)
+print(list_values)
+sum_value = 0
+i = 0
+while i < len(list_values):
+    value = list_values[i]
+    if value.isdigit():
+        sum_value = sum_value + float(value)
+        print(value, sum_value)
+    else:
+        sum_value = sum_value + len(value)
+    i = i + 1
+
+
+
 
