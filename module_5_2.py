@@ -17,7 +17,23 @@ class House:
     def __str__(self):
         return f'Название: {self.name}, количество этажей: {self.number_of_floors} '
 
+    def __eq__(self, other):
+        return (self.number_of_floors == other.number_of_floors)
+    def __lt__(self, other):
+        return (self.number_of_floors < other.number_of_floors)
+    def __le__(self, other):
+        return (self.number_of_floors <= other.number_of_floors)
+    def __gt__(self, other):
+        return (self.number_of_floors > other.number_of_floors)
+    def __ge__(self, other):
+        return (self.number_of_floors >= other.number_of_floors)
+    def __le__(self, other):
+        return (self.number_of_floors != other.number_of_floors)
 
+
+
+
+# Методы __lt__(<), __le__(<=), __gt__(>), __ge__(>=), __ne__(!=)
 h1 = House('ЖК Эльбрус', 10)
 h2 = House('ЖК Акация', 20)
 
@@ -28,3 +44,14 @@ print(h2)
 # __len__
 print(len(h1))
 print(len(h2))
+
+print(h1 == h2)
+print(h1 < h2)
+print(h1 <= h2)
+print(h1 > h2)
+print(h1 >= h2)
+print(h1 != h2)
+
+
+# a = 5.5
+# print(isinstance(House, (str)))
