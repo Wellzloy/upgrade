@@ -19,18 +19,24 @@ class House:
 
     def __eq__(self, other):
         return (self.number_of_floors == other.number_of_floors)
+
     def __lt__(self, other):
         return (self.number_of_floors < other.number_of_floors)
+
     def __le__(self, other):
         return (self.number_of_floors <= other.number_of_floors)
+
     def __gt__(self, other):
         return (self.number_of_floors > other.number_of_floors)
+
     def __ge__(self, other):
         return (self.number_of_floors >= other.number_of_floors)
+
     def __le__(self, other):
         return (self.number_of_floors != other.number_of_floors)
 
-
+    def __add__(self, value):
+        pass
 
 
 # Методы __lt__(<), __le__(<=), __gt__(>), __ge__(>=), __ne__(!=)
@@ -53,5 +59,3 @@ print(h1 >= h2)
 print(h1 != h2)
 
 
-a = 5.5
-print(isinstance(House, (str)))
