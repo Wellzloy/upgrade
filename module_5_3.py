@@ -53,5 +53,5 @@ print(h1 >= h2)
 print(h1 != h2)
 
 
-# a = 5.5
-# print(isinstance(House, (str)))
+a = 5.5
+print(isinstance(House, (str)))
