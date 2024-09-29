@@ -1,9 +1,11 @@
 class House:
     houses_history = []
+
     def __new__(cls, *args, **kwargs):
         new_object = super().__new__(cls)
         cls.houses_history.append(args[0])
         return new_object
+
     def __init__(self, name, number_of_floors):
         self.new_floor = None
         self.name = name
