@@ -19,11 +19,17 @@ class House:
         return f'Название: {self.name}, количество этажей: {self.number_of_floors} '
 
     def __eq__(self, other):
-        return self.number_of_floors == other.number_of_floors
+        if isinstance(other, House):
+            return self.number_of_floors == other.number_of_floors
+        else:
+            raise TypeError('other does not belong to the House class')
 
     def __add__(self, value):
-        self.number_of_floors = self.number_of_floors + value
-        return self
+        if isinstance(value, int):
+            self.number_of_floors = self.number_of_floors + value
+            return self
+        else:
+            TypeError('value does not belong to the int class')
 
     def __iadd__(self, value):
         self.number_of_floors += value
