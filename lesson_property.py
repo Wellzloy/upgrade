@@ -51,12 +51,26 @@ class Box:
         self.volume = self.height * self.width * self.height
 
 
-    def
+    def get_length(self):
+        return self.length
+
+    def set_length(self, value):
+        if not isinstance(value, int):
+            raise TypeError('length must be "int"')
+        elif value > 0:
+            self.length = value
+        else:
+            raise ValueError(f'length more then 0, got: {value = }')
+
+
+
 
 
 box_1 = Box(1, 2, 3)
-box_1.length = -18
-print(box_1.length)
+# box_1.length = -18
+# box_1.set_length(-18)
+box_1.length = -15
+print(box_1.get_length())
 print(box_1.__dict__)
 print(box_1.__class__)
 box_1 = Box(10, 2, 3)
