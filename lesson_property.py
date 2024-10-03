@@ -45,7 +45,6 @@ class Box:
         else:
             raise ValueError(f'length more then 0, got: {z = }')
 
-
         self.volume = self.__length * self.width * self.height
 
     def get_length(self):
@@ -59,10 +58,10 @@ class Box:
         else:
             raise ValueError(f'length more then 0, got: {value = }')
 
+
 box_1 = Box(1, 2, 3)
 # box_1.length = -18
 box_1.set_length(10)
-
 print(box_1.get_length())
 print(box_1.__dict__)
 # print(box_1.__class__)
