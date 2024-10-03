@@ -75,68 +75,79 @@ class UrTube:
 
 
 if __name__ == "__main__":
+
     ur_tube = UrTube()
+    v1 = Video('Лучший язык программирования 2024 года', 200)
+    v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
 
-    # Пример регистрации
-    ur_tube.register("admin", "password", 30)
-    ur_tube.register("user1", "password1", 20)
-    ur_tube.register("user2", "password2", 18)
+    # Добавление видео
+    ur_tube.add_video(v1+v2)
 
-    # Пример входа
-    ur_tube.log_in("admin", "password")
-    ur_tube.log_in("user1", "password1")
-    ur_tube.log_in("user2", "password2")
+    # Проверка поиска
+    print(ur.get_videos('лучший'))
+    print(ur.get_videos('ПРОГ'))
 
-    # Пример добавления видео
-    ur_tube.add_video(Video("Видео 1", 60, True))
-    ur_tube.add_video(Video("Видео 2", 30))
-    ur_tube.add_video(Video("Видео 3", 45, False))
 
-    # Пример поиска видео
-    titles = ur_tube.get_videos("видео")
-    print(titles)
-
-    # Пример просмотра видео
-    ur_tube.watch_video("Видео 2")
-    ur_tube.watch_video("Видео 3")
-    ur_tube.watch_video("Несуществующее видео")
-
-    # Пример выхода
-    ur_tube.log_out()
-    ur_tube.log_out()
-    ur_tube.log_out()
-
-    # Тестовый вход после выхода
-    ur_tube.log_in("admin", "password")
-    ur_tube.log_in("user1", "password1")
-    ur_tube.log_in("user2", "password2")
-
-    # Проверка наличия ограничений
-    ur_tube.watch_video("Видео 1")
-    ur_tube.watch_video("Видео 3")
-    ur_tube.watch_video("Видео 1")
-
-    # Очистка текущего времени просмотра
-    ur_tube.watch_video("Видео 1")
-    ur_tube.watch_video("Видео 3")
-    ur_tube.watch_video("Видео 1")
-
-    # Проверка отсутствия входа
-    ur_tube.watch_video("Видео 1")
-    ur_tube.watch_video("Видео 3")
-    ur_tube.watch_video("Видео 1")
-
-    # Еще один тестовый вход
-    ur_tube.log_in("admin", "password")
-    ur_tube.log_in("user1", "password1")
-    ur_tube.log_in("user2", "password2")
-
-    # Еще одна проверка наличия ограничений
-    ur_tube.watch_video("Видео 1")
-    ur_tube.watch_video("Видео 3")
-    ur_tube.watch_video("Видео 1")
-
-    # Очистка текущего времени просмотра
-    ur_tube.watch_video("Видео 1")
-    ur_tube.watch_video("Видео 3")
-    ur_tube.watch_video("Видео 1")
+    # # Пример регистрации
+    # ur_tube.register("admin", "password", 30)
+    # ur_tube.register("user1", "password1", 20)
+    # ur_tube.register("user2", "password2", 18)
+    #
+    # # Пример входа
+    # ur_tube.log_in("admin", "password")
+    # ur_tube.log_in("user1", "password1")
+    # ur_tube.log_in("user2", "password2")
+    #
+    # # Пример добавления видео
+    # ur_tube.add_video(Video("Видео 1", 60, True))
+    # ur_tube.add_video(Video("Видео 2", 30))
+    # ur_tube.add_video(Video("Видео 3", 45, False))
+    #
+    # # Пример поиска видео
+    # titles = ur_tube.get_videos("видео")
+    # print(titles)
+    #
+    # # Пример просмотра видео
+    # ur_tube.watch_video("Видео 2")
+    # ur_tube.watch_video("Видео 3")
+    # ur_tube.watch_video("Несуществующее видео")
+    #
+    # # Пример выхода
+    # ur_tube.log_out()
+    # ur_tube.log_out()
+    # ur_tube.log_out()
+    #
+    # # Тестовый вход после выхода
+    # ur_tube.log_in("admin", "password")
+    # ur_tube.log_in("user1", "password1")
+    # ur_tube.log_in("user2", "password2")
+    #
+    # # Проверка наличия ограничений
+    # ur_tube.watch_video("Видео 1")
+    # ur_tube.watch_video("Видео 3")
+    # ur_tube.watch_video("Видео 1")
+    #
+    # # Очистка текущего времени просмотра
+    # ur_tube.watch_video("Видео 1")
+    # ur_tube.watch_video("Видео 3")
+    # ur_tube.watch_video("Видео 1")
+    #
+    # # Проверка отсутствия входа
+    # ur_tube.watch_video("Видео 1")
+    # ur_tube.watch_video("Видео 3")
+    # ur_tube.watch_video("Видео 1")
+    #
+    # # Еще один тестовый вход
+    # ur_tube.log_in("admin", "password")
+    # ur_tube.log_in("user1", "password1")
+    # ur_tube.log_in("user2", "password2")
+    #
+    # # Еще одна проверка наличия ограничений
+    # ur_tube.watch_video("Видео 1")
+    # ur_tube.watch_video("Видео 3")
+    # ur_tube.watch_video("Видео 1")
+    #
+    # # Очистка текущего времени просмотра
+    # ur_tube.watch_video("Видео 1")
+    # ur_tube.watch_video("Видео 3")
+    # ur_tube.watch_video("Видео 1")
