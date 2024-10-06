@@ -33,12 +33,13 @@ class Predator(Animal):
 
 class Flower(Plant):
     def __init__(self, name):
-        super().__init__(name)
+        Plant.__init__(self, name)
+
 
 
 class Fruit(Plant):
     def __init__(self, name):
-        super().__init__(name, edible=True)
+        Plant.__init__(self, name, edible=True)
 
 
 a1 = Predator('Волк с Уолл-Стрит')
