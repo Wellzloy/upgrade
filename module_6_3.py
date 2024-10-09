@@ -33,8 +33,12 @@ class Pegasus(Horse, Eagle):
 
 
 if __name__ == "__main__":
-    pegasus = Pegasus()
-    pegasus.voice()  # Печать звука
-    pegasus.move(5, 8)  # Движение по горизонтали и вертикали
-    pos = pegasus.get_pos()  # Получение текущего положения
-    print(pos)  # Вывод позиции
+    p1 = Pegasus()
+
+    print(p1.get_pos())
+    p1.move(10, 15)
+    print(p1.get_pos())
+    p1.move(-5, 20)
+    print(p1.get_pos())
+
+    p1.voice()
