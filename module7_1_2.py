@@ -30,17 +30,13 @@ class Shop:
 
         for line in lines:
             parts = line.strip().split(', ')
-            existing_names.add(parts[0])
+            existing_names.add(parts[0].replace('<', ''))
 
         for product in products:
             if product.name not in existing_names:
                 new_products.append(product)
             else:
-                (errors.append(f'Продукт "{product.name}" уже есть в магазине'))
-
-            print(product.name, 'имена продуктоа')
-
-
+                errors.append(print(f'Продукт {product.name} {product.weight} {product.category} уже есть в магазине'))
 
 
         if len(new_products) > 0:
@@ -49,10 +45,7 @@ class Shop:
                 file.write(f'{product}\n')
             file.close()
 
-
         return new_products, errors
-
-
 
 
 s1 = Shop()
@@ -63,20 +56,4 @@ p3 = Product('Potato', 5.5, 'Vegetables')
 print(p2)
 s1.add(p1, p2, p3)
 print(s1.get_products())
-#Этот код описывает метод add класса Shop. Он принимает список продуктов (*products) и выполняет следующие действия:
 
-#     Создает три переменные:
-#         existing_names: множество существующих имен продуктов.
-#         new_products: список новых продуктов, которые еще не существуют в магазине.
-#         errors: список ошибок, возникающих при попытке добавить уже существующий продукт.
-#     Открывает файл с именем __file_name для чтения (r).
-#     Считывает все строки из файла и сохраняет их в переменную lines.
-#     Закрывает файл.
-#     Проходит по каждой строке в lines.
-#     Разбивает каждую строку на части с помощью split, удаляет пробелы с конца строк с помощью strip и добавляет
-#     первую часть (имя продукта) в множество existing_names.
-#     Проходит по каждому продукту в списке products.
-#     Если имя продукта (product.name) не находится в множестве existing_names, добавляет его в список new_products.
-#     Если имя продукта уже существует в множестве existing_names, добавляет сообщение об ошибке в список errors.
-#
-# Когда метод завершается, он возвращает список новых продуктов и список ошибок.
