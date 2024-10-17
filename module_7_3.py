@@ -12,10 +12,13 @@ class WordsFinder:
                         clean_line = line.lower().replace(',', '').replace('.', '').replace('=', '').replace('!', '').replace('?', '').replace(';', '').replace(':', '').replace(' - ', ' ')
                         words.extend(clean_line.split())
                 self.all_words[file_name] = words
+        # print(self.all_words, '111')
         return self.all_words
+
     def find(self, word):
         result = {}
         all_words = self.get_all_words()
+        word = word.lower()
         for file_name, words in all_words.items():
             if word in words:
                 result[file_name] = words.index(word) + 1  # Словарей индексируются с 1
@@ -23,6 +26,7 @@ class WordsFinder:
 
     def count(self, word):
         result = {}
+        word = word.lower()
         all_words = self.get_all_words()
         for file_name, words in all_words.items():
             result[file_name] = words.count(word)
