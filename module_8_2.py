@@ -34,12 +34,14 @@ def personal_sum(numbers):
             result += i
         except TypeError:
             incorrect_data += 1
-    print(f'Обработано {incorrect_data} неверных данных.')
-    return result
+    # print(f'Обработано {incorrect_data} неверных данных.')
+    return result, incorrect_data
 
 
 if __name__ == "__main__":
-    print(f'Результат 00: {personal_sum([42, 15, 36, '13'])}')
+    mix_list = [1, 2, 'a',4, 5, None, 6]
+    total_sum, incorrect_count = personal_sum(mix_list)
+    print(f'Сумма чисел: {total_sum}, Колличество некорректных данных: {incorrect_count}')
 
 #    print(f'Результат 1: {calculate_average("1, 2, 3")}')  # Строка перебирается, но каждый символ - строковый тип
 #    print(f'Результат 2: {calculate_average([1, "Строка", 3, "Ещё Строка"])}')  # Учитываются только 1 и 3
